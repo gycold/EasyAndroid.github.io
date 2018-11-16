@@ -2,29 +2,39 @@
 
   <div class="wrapper">
 
-    <center>
-        
-		<p><a class="link" href="{{ site.baseurl }}/archive/">Archive</a> /
-		<a class="link" href="{{ site.baseurl }}/category/">Category</a> / 
-		<a class="link" href="{{ site.baseurl }}/tags/">Tags</a> / 
-		<a class="link" href="{{ site.baseurl }}/about/">About</a> /
-		<a class="link" href="{{ site.baseurl }}/contact/">Contact</a>
-        </p>
+    <h2 class="footer-heading small-site-title">{{ site.title }}</h2>
 
-        <span><script>document.write(new Date().getFullYear());</script></span>
-        <span>&copy;</span>
-        
-		<a class="link" href="{{ site.baseurl }}">{{ site.name }}</a>
-		<br>
-		<span>Theme &copy; <a class="link" href="https://gabriel-chen.github.io" target="_blank"> Gabriel</a> | </span>
-				<iframe
-			style="margin-left: 2px; margin-bottom:-5px;"
-			frameborder="0" scrolling="0" width="91px" height="20px"
-			src="https://ghbtns.com/github-btn.html?user=itisbenjamin&repo=Nice_Blog&type=star&count=true" >
-		</iframe>
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list footer-content">
+          <li>Powered By <a href="http://github.com/hemangsk/Gravity">Gravity</a></li>
+          <li>Made with <i class="fa fa-heart"></i> on <a href="http://jekyllrb.com"><span>{ { Jekyll } }</a></span></li>
 
-    </center>
-    
+
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2 footer-content">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3 site-description">
+        <p>{{ site.description }}</p>
+      </div>
+    </div>
+
   </div>
 
 </footer>

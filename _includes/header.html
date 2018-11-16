@@ -1,8 +1,19 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-</head>
+<div class="wrapper">
+  <center> <a href="/index.html"><div class="site-title">   {{site.title}} </div></a></center>
+</div>
+<div class="wrapper site-description">
+<center>  {{site.description}} </center>
+</div>
+<div class="wrapper">
+  <div class="trigger site-navigation">
+    <a class="page-link" href="{{site.url}}{{site.baseurl}}">HOME</a>
+
+    {% for sitePage in site.pages %}
+    {% if sitePage.title %}
+
+    <span class="exclamationMark">/</span><a class="page-link" href="{{sitePage.url | prepend: site.baseurl }}">{{sitePage.title}}</a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>

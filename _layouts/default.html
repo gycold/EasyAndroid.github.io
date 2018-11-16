@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      
+
   {% include head.html %}
 
-  {% if site.google-analytics %}
-  {% include google-analytics.html %}
-  {% endif %}
+  <body class="{% if site.theme-dark %} dark {% else %} light {% endif %} ">
 
-  {% if page.url == "/404.html" %}
-  <meta http-equiv="refresh" content="10; url={{ site.baseurl }}">
-  {% endif %}
+    {% include header.html %}
 
-  </head>
-
-  <body>
-
-  {% include header.html %}
-
-  <div class="wrapper">
+    <div class="page-content">
+      <div class="wrapper">
         {{ content }}
-  </div>
-
-</body>
-
-<foot>
+      </div>
+    </div>
 
     {% include footer.html %}
-    {% include foot.html %}
 
-</foot>
+  </body>
 
 </html>
